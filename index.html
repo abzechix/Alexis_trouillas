@@ -12,13 +12,28 @@
     
 </head>
 <body>
-    <div id="myNav" class="overlay">
-        
-            <div class="overlay-content">
-              <a href="#Welcome" onclick="closeNav()">Alexis Trouillas</a>
-              <a href="#About" onclick="closeNav()">À Propos</a>
-              <a href="#Contact" onclick="closeNav()">Contactez-Nous</a>
-            </div>
+    <div id="myNav" class="overlay" >
+        <div class="newsletter-background" onclick="closeNav()"></div>
+        <div class="newsletter" id="newsletter" onclick="openNav()">
+                <h1>
+                     Ne manquez pas ce qui se passe
+                    <span>Soyez les premiers à savoir</span>
+                </h1>
+
+                <p>Lorsque le site est mis en ligne</p>
+
+              <div class="txtb">
+                <input type="text" placeholder="Votre Nom">
+              </div>  
+
+              <div class="txtb">
+                <input type="text" placeholder="Votre Adresse Email">
+                <button type="button"><i class="fas fa-arrow-right"></i></button>
+              </div>
+        </div>
+        <div class="overlayButton">
+            
+        </div>
     </div>
 
     <header id="#Welcome">
@@ -28,12 +43,14 @@
                 <div class="hamburger-menu" onclick="openNav()">
                     <div class="bar"><i class="fas fa-bars"></i></div>
                 </div>
+                <div class='bottom-bar'>
+                    <h2 class="bottom-bar-text translate">Le site est en cours de fabrication <br>Si vous souhaitez être informé de la mise en ligne du site, <button class="btn" onclick="openNav()">cliquez ici</button>  </h2>
+                </div>
             </div>
         </nav>
 
-        <h2 class="top-sub-title translate" data-speed="0.1">Bienvenue sur le site officiel de</h2>
         <h1 class="big-title translate" data-speed="0.1">Alexis Trouillas.</h1>
-        <h2 class="bottom-sub-title translate" data-speed="0.1">Le site est en cours de fabrication</h2>
+        <h2 class="bottom-sub-title translate" data-speed="0.1">Candidat à l'Élection Présidentielle pour réunifier la France. <br> J’aime le français, les Français et la France, comme j’aime la vérité, la sagesse et la nature.</h2>
         
 
         <img src="img/person.png" class="person translate" data-speed="-0.25" alt="">
@@ -60,21 +77,7 @@
             </div>
         </div>
     </section>
-    <div id="Contact">
-		<div class="contact-container">
-			<div class="contact-box">
-				<div class="left"></div>
-				<div class="right">
-					<h2>Contactez-Nous</h2>
-					<input type="text" class="field" placeholder="Votre Nom">
-					<input type="text" class="field" placeholder="Votre Email">
-					<input type="text" class="field" placeholder="Votre Numéro de téléphone">
-					<textarea placeholder="Votre Message" class="field"></textarea>
-					<button class="btn">Envoyez</button>
-				</div>
-			</div>
-		</div>
-	</div>
+    
     
     <script src="app.js"></script>
 </body>

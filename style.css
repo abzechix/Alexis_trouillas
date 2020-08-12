@@ -45,9 +45,9 @@ header:after{
 
 .person{
     position: absolute;
-    width: 650px;
-    bottom: -100px;
-    left: -70px;
+    width: 600px;
+    bottom: -950px;
+    right: 30px;
     z-index: 20;
 }
 
@@ -81,7 +81,7 @@ nav{
     width: 100%;
     padding: 1rem 0;
     z-index: 30;
-    background: linear-gradient(to bottom, rgba( 0, 0, 0, 0.05), transparent)
+    background: linear-gradient(to bottom, #2f2e2d2f, transparent)
 }
 
 nav .container{
@@ -91,15 +91,17 @@ nav .container{
 }
 
 .logo{
-    color: #fff;
+    color: #e6e6e5;
     font-size: 1.1rem;
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 2px;
+     text-shadow: .5px .5px #2f2e2d;
 }
 
 .logo span{
     font-weight: 300;
+    color: #2f2e2d;
 }
 
 .hamburger-menu{
@@ -109,7 +111,6 @@ nav .container{
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    z-index: 100;
 }
 
 .bar i{
@@ -127,31 +128,58 @@ nav .container{
     text-align: center;
     font-size: 5rem;
     font-weight: 600;
-    color: #b3b3e6;
+    color: #2f2e2d;
 }
 
-.top-sub-title {
-    position: absolute;
-    z-index: 30;
-    line-height: 2rem;
-    top: calc(50% - 5rem);
-    width: 100%;
-    text-align: center;
-    font-size: 2rem;
-    font-weight: 500;
-    color: #fff;
+.bottom-bar {
+ position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-image: url('./img/cogs.png');
+  background-position: center; /* Center the image */
+  background-repeat: repeat-x;
+  background-color: #fefefe1f; /* Do not repeat the image */
 }
+
+.bottom-bar-text{
+	padding: 0.5rem 7rem;
+	color: #e6e6e5;
+	text-align: center;
+	font-size: 1.1rem;
+}
+
+.bottom-bar-text:hover .btn{
+	font-size: 1.3rem;
+	background: none;
+	color: #4285F4;
+	text-shadow: 3px 3px 0 #2f2e2d44,  4px 4px 0 #fefefe44, 1px -1px 0 #2f2e2d88, 1px 1px 0 #fefefe88;
+}
+
+.btn{
+	font-family: 'Poppins', sans-serif;
+	color: #e6e6e5;
+	padding: .3rem .7rem;
+	border-radius: 2rem;
+	font-size: 1.1rem;
+	background: linear-gradient(to top, #4285F4, transparent);
+	border:none;
+	pointer-events: all;
+	transition: 1.5s;
+}
+
 
 .bottom-sub-title {
     position: absolute;
     z-index: 30;
     line-height: 2rem;
-    top: calc(50% + 7rem);
+    top: calc(50% + 4rem);
     width: 100%;
     text-align: center;
-    font-size: 1.7rem;
+    font-size: 1.2rem;
     font-weight: 400;
-    color: #fff;
+    color: #e6e6e5;
+    text-shadow: 2px 2px 0 #4285F444,  2.5px 2.5px 0 #DB443744, 1px -1px 0 #DB443744, 1px 1px 0 #4285F444;
 }
 
 
@@ -221,8 +249,12 @@ section .container > *{
 
 
 .overlay {
-    height: 100%;
-    width: 0;
+    background: #786fa633;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
     position: fixed;
     z-index: 40;
     top: 0;
@@ -233,158 +265,83 @@ section .container > *{
     transition: 0.5s;
   }
   
-  .overlay-content {
-    position: relative;
-    top: 25%;
-    width: 100%;
-    text-align: center;
-    margin-top: 30px;
-  }
-  
-  .overlay a {
-    padding: 8px;
-    text-decoration: none;
-    font-size: 36px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-  }
-  
-  .overlay a:hover, .overlay a:focus {
-    color: #f1f1f1;
-  }
-  
-  .overlay .closebtn {
-    position: absolute;
-    font-size: 1.1rem;
-    color: #fff;
-    right: 0;
-    margin: .6rem 1.6rem;
-  }
+  .newsletter{
+  background-image: linear-gradient(125deg,#4285F4,#fefefe88);
+  width: 500px;
+  padding: 60px;
+  text-align: center;
+  box-shadow: 0 0 20px #00000060;
+  display: none;
+  position: absolute;
+  z-index: 55;
 
-
-
-  #Contact{
-    position: absolute;
-    z-index: 60;
+}
+.newsletter-background{
+	position: absolute;
+	z-index: 50;
+	background-image: linear-gradient(-125deg,#4285F488,#fefefe88);
 	height: 100vh;
 	width: 100%;
-	display: flex;
-	justify-content: center;
 }
 
-
-.contact-container{
-	position: relative;
-	width: 100%;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: 20px 100px;
+.newsletter h1{
+  text-transform: uppercase;
+  color: #fefefe;
+  font-size: 2.1rem;
+  line-height: 2.3rem;
 }
 
-.contact-container:after{
-	content: '';
-    position: absolute;
-    z-index: -1;
-	width: 100%;
-	height: 100%;
-	left: 0;
-	top: 0;
-	background: url("img/Contact_img.JPG") no-repeat center;
-	background-size: cover;
-	filter: blur(50px);
-	
-}
-.contact-box{
-	max-width: 850px;
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	background-color: #fff;
-	box-shadow: 0px 0px 19px 5px rgba(0,0,0,0.19);
+.newsletter h1 span{
+	color: #2f2e2d;
+  display: block;
+  font-size: 1.7rem;
 }
 
-.contact-box .left{
-	background: url("img/Contact_img.JPG") no-repeat center;
-	background-size: cover;
-	height: 100%;
+.newsletter p{
+  color: #fefefe;
+  font-size: 1.1rem;
+  margin: 10px 0 40px;
 }
 
-.contact-box .right{
-	padding: 25px 40px;
+.txtb{
+  width: 100%;
+  height: 70px;
+  background: #e1e1e199;
+  border-radius: 40px;
+  position: relative;
+  margin-bottom:  10px;
 }
 
-.contact-box h2{
-	position: relative;
-	padding: 0 0 10px;
-	margin-bottom: 10px;
+.txtb input{
+  width: 100%;
+  height: 70px;
+  border-radius: 40px;
+  border: 0;
+  background: none;
+  padding: 0 30px;
+  outline: none;
+  font-size: 15px;
+  padding-right: 80px;
 }
 
-.contact-box h2:after{
-	content: '';
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    height: 4px;
-    width: 50px;
-    border-radius: 2px;
-    background-color: #68688a;
+.txtb button{
+  background: #4285F4;
+  border: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  outline: none;
+  cursor: pointer;
+  color: #fefefe;
+  transition: 0.3s linear;
 }
 
-.contact-box .field{
-	width: 100%;
-	border: 2px solid rgba(0, 0, 0, 0);
-	outline: none;
-	background-color: rgba(230, 230, 230, 0.6);
-	padding: 0.5rem 1rem;
-	font-size: 1.1rem;
-	margin-bottom: 22px;
-	transition: .3s;
+.txtb button:hover{
+  opacity: .5;
 }
-
-.contact-box .field:hover{
-	background-color: rgba(0, 0, 0, 0.1);
-}
-
-.contact-box textarea{
-	min-height: 150px;
-}
-
-.contact-box .btn{
-	width: 100%;
-	padding: 0.5rem 1rem;
-	background-color: #68688a;
-	color: #fff;
-	font-size: 1.1rem;
-	border: none;
-	outline: none;
-	cursor: pointer;
-	transition: .3s;
-}
-
-.contact-box .btn:hover{
-    background-color: #27ae60;
-}
-
-.contact-box .field:focus{
-    border: 2px solid rgba(30,85,250,0.47);
-    background-color: #fff;
-}
-
-@media screen and (max-width: 880px){
-	.contact-box .contact-box{
-		grid-template-columns: 1fr;
-	}
-	.contact-box .left{
-		height: 200px;
-	}
-}
-
 
 
 
@@ -394,11 +351,10 @@ section .container > *{
     }
 }
 
-@media(max-width: 600px){
-    .overlay a {font-size: 20px}
-    .overlay .closebtn, .bar i{
-    font-size: 0.9rem;
-    
+
+@media(max-width: 450px){
+    .person{
+    	right: 0;
     }
 
     .big-title{
@@ -412,4 +368,10 @@ section .container > *{
     .title{
         font-size: 1.2rem;
     }
+}
+
+@keyframes bntBlue{
+	from {background: linear-gradient(to top, #4285F4, transparent);
+		border: none;}
+	to{background: linear-gradient(to top, #4285F4, #e6e6e53f);}
 }

@@ -1,9 +1,13 @@
 function openNav() {
     document.getElementById("myNav").style.width = "100%";
+    document.getElementById("newsletter").style.display = "block";
+
   }
   
   function closeNav() {
     document.getElementById("myNav").style.width = "0%";
+    document.getElementById("newsletter").style.display = "none";
+
     
   }
 
